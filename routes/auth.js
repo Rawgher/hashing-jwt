@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const express = require("express");
 const router = new express.Router();
 const User = require('../models/user');
 const { SECRET_KEY } = require('../config')
@@ -46,3 +47,5 @@ router.post('/register', async (req, res, next) => {
         return next(e);
     }
 })
+
+module.exports = router;
